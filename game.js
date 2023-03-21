@@ -20,8 +20,8 @@ const squares = [
 
 // Draw the image and squares on the canvas when the image has loaded
 image.onload = () => {
-  scaleFactor = canvas.height / image.height; // Set initial scale factor to fit the image height to the canvas height
   canvas.height = window.innerHeight;
+  scaleFactor = canvas.height / image.height; // Set initial scale factor to fit the image height to the canvas height
   canvas.width = Math.min(image.width * scaleFactor, window.innerWidth);
   ctx.drawImage(image, 0, 0, image.width * scaleFactor, canvas.height);
   squares.forEach((square) => {
