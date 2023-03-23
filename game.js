@@ -1,7 +1,5 @@
 // Get canvas element, set its dimensions to fill the window, and get its 2D context
 const canvas = document.getElementById("imageCanvas");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
 const ctx = canvas.getContext("2d");
 ctx.imageSmoothingQuality = "high";
 
@@ -22,10 +20,12 @@ const squares = [
 
 // Draw the image and squares on the canvas when the image has loaded
 image.onload = () => {
+  canvas.height = window.innerHeight;
   scaleFactor = canvas.height / image.height; // Set initial scale factor to fit the image height to the canvas height
-  ctx.drawImage(image, 0, 0, image.width * scaleFactor, canvas.height); // Draw the image
+  canvas.width = Math.min(image.width * scaleFactor, window.innerWidth);
+  ctx.drawImage(image, 0, 0, image.width * scaleFactor, canvas.height);
   squares.forEach((square) => {
-    drawSquare(square); // Draw each square
+    drawSquare(square);
   });
 };
 
@@ -158,8 +158,10 @@ function zoomTo(targetScaleFactor, square) {
 
   if (offsetX > 0) offsetX = 0;
   if (offsetY > 0) offsetY = 0;
-  if (offsetX < -(scaledWidth - canvas.width)) offsetX = -(scaledWidth - canvas.width);
-  if (offsetY < -(scaledHeight - canvas.height)) offsetY = -(scaledHeight - canvas.height);
+  if (offsetX < -(scaledWidth - canvas.width))
+    offsetX = -(scaledWidth - canvas.width);
+  if (offsetY < -(scaledHeight - canvas.height))
+    offsetY = -(scaledHeight - canvas.height);
   redrawImage(); // Redraw the image with the updated scale factor and offsets
 }
 
