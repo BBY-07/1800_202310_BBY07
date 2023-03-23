@@ -1,5 +1,6 @@
 let zoom = false;
-var playerId;
+var playerId = firebase.auth().currentUser.uid;
+;
 
 document.getElementById("lawnmower").addEventListener("click", function () {
   zoom = true;
@@ -27,8 +28,7 @@ const backButton = () => {
 };
 
 const config = {
-
-}
+};
 
 // Initialize the Firebase SDK
 firebase.initializeApp(config);
