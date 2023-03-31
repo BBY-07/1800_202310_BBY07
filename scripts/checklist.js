@@ -70,7 +70,7 @@ function generateCheckboxes() {
 }
 generateCheckboxes();
 
-function savePreferences() {
+function saveChecklist() {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   const preferences = [];
 
