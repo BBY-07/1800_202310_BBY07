@@ -10,12 +10,16 @@ function populateUserInfo() {
       currentUser.get().then((userDoc) => {
         //get the data fields of the user
         var userName = userDoc.data().name;
+        var userCountry = userDoc.data().country;
         var userProvince = userDoc.data().province;
         var userCity = userDoc.data().city;
 
         //if the data fields are not empty, then write them in to the form.
         if (userName != null) {
           document.getElementById("nameInput").value = userName;
+        }
+        if (userCountry != null) {
+          document.getElementById("countryInput").value = userCountry;
         }
         if (userProvince != null) {
           document.getElementById("provinceInput").value = userProvince;
@@ -49,7 +53,7 @@ function saveUserInfo() {
     currentUser
       .update({
         name: userName,
-        country: userCountry;
+        country: userCountry,
         province: userProvince,
         city: userCity,
       })

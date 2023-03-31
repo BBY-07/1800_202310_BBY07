@@ -1,14 +1,24 @@
-<body>
-  <form>
-    <label> <input type="checkbox" id="myCheckbox" /> Save to Firebase </label>
-  </form>
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+    <title>Checklist</title>
+  </head>
+  <body>
+    <h1>Checklist</h1>
+    <div class="container">
+      <div id="Checkboxes"></div>
+      <button type="button" class="btn btn-warning" onclick="savePreferences()">Save Preferences</button>
+</div>
 
-<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
-<script src="./scripts/checklist.js"></script>
-<script src="./scripts/firebaseAPI.js"></script>
-<script src="./scripts/Profile.js"></script>
-<script src="./scripts/Authentication.js"></script>
+    <!-- JavaScript code to populate the checklist -->
+    <script src="./scripts/checklist.js"></script>
+    <script src="./scripts/firebaseAPI.js"></script>
+  </body>
+</html>
