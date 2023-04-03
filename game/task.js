@@ -1,36 +1,38 @@
 let inTask = false;
 let taskElement = null;
-let currentTask = null;
+let selectedElement = null;
 
 const handleClickTask = (square) => {
   inTask = !inTask;
   if (inTask) {
-    currentTask = square;
-    taskElement = createTaskElement(generateTaskUI(square));
+    selectedElement = square;
+    taskElement = createElement(generateTaskUI(square));
     document.body.appendChild(taskElement);
   } else {
-    removeTaskElement(taskElement);
-    currentTask = null;
+    removeElement(taskElement);
+    selectedElement = null;
   }
 };
 
 function handleAction(e) {
-  const correctAction = `<div class="task-correct">Correct!</div>`;
   e.preventDefault();
+  const correctAction = `<div class="task-correct">Correct!</div>`;
+
+  updateUI();
 
   const taskBody = taskElement.getElementsByClassName("task")[0];
   removeAllChildNodes(taskBody);
   taskBody.innerHTML += correctAction;
 
-  clearTaskExplanation().then(() => {
-    taskElement.innerHTML = generateTaskCompleteUI(currentTask);
+  clearElement().then(() => {
+    taskElement.innerHTML = generateTaskCompleteUI(selectedElement);
   });
 }
 
 function handleContinue(e) {
   e.preventDefault();
-  removeTaskElement(taskElement);
-  currentTask = null;
+  removeElement(taskElement);
+  selectedElement = null;
   taskElement = null;
   inTask = false;
   zoomOut();
