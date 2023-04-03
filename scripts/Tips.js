@@ -1,6 +1,5 @@
 function readTip() {
   const collectionRef = db.collection("SafetyTips");
-  //console.log(collectionRef);
   collectionRef.get().then((querySnapshot) => {
     const numDocs = querySnapshot.size;
     const randomIndex = Math.floor(Math.random() * numDocs);
