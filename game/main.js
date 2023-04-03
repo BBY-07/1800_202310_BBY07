@@ -13,6 +13,8 @@ function redrawImage() {
   });
 }
 
+let squares = []
+
 //Get level data
 async function fetchLevelData() {
   const levelData = await fetch("../levels/levels.json").then((response) =>
@@ -29,6 +31,14 @@ async function fetchLevelData() {
   const tasks = level.tasks.map((task) => {
     return taskData.tasks[task];
   });
+
+  squares = tasks.map((task) => {
+    const { x, y, width, height } = task.position;
+    const name = task.element;
+    return { x, y, width, height, name };
+  });
+
+  console.log(squares);
 
   return { name, tasks };
 }
