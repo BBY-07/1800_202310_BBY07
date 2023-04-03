@@ -57,6 +57,7 @@ function stopPanning() {
 }
 
 function zoomOnSquareClick(e) {
+  if (isZoomed) return;
   const { x: mouseX, y: mouseY } = getPointerCoordinates(e);
 
   squares.forEach((square, index) => {
