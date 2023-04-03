@@ -11,14 +11,15 @@ function generateCheckboxes() {
         // Get the preferences array from the user document
         const preferences = doc.data().preferences || [];
 
+        // Get the Checkboxes collection for the current user
+        const checkboxesRef = currentUser.collection("Checkboxes");
+
         collectionRef.get().then((querySnapshot) => {
           const checkboxes = [];
 
-          console.log("hello from line 31");
           querySnapshot.forEach((doc) => {
             const docData = doc.data();
 
-            console.log("hello from line 35");
             // Loop through the fields of the document
             Object.keys(docData).forEach((key) => {
               // Check if the field is a string
@@ -33,6 +34,13 @@ function generateCheckboxes() {
                 if (preferences.includes(docData[key])) {
                   checkbox.checked = true;
                 }
+
+                // Check the checkbox if the value is in the Checkboxes collection
+                checkboxesRef.doc(key).get().then((doc) => {
+                  if (doc.exists) {
+                    checkbox.checked = doc.data()[key];
+                  }
+                });
 
                 // Create a label element
                 const label = document.createElement("label");
@@ -68,35 +76,74 @@ function generateCheckboxes() {
     }
   });
 }
+
 generateCheckboxes();
+
+
 
 function saveChecklist() {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  const preferences = [];
+  const preferences = {};
 
   checkboxes.forEach((checkbox) => {
     if (checkbox.checked) {
-      preferences.push(checkbox.value);
+      preferences[checkbox.name] = true;
+    } else {
+      preferences[checkbox.name] = false;
     }
   });
+
   firebase.auth().onAuthStateChanged((user) => {
     // Check if user is signed in:
     if (user) {
-      //go to the correct user document by referencing to the user uid
-      currentUser = db.collection("users").doc(user.uid);
-      return currentUser
-        .update({
-          preferences: preferences,
-        })
-        .then(() => {
-          console.log("Preferences saved successfully!");
-        })
-        .catch((error) => {
-          console.error("Error saving preferences: ", error);
+      // Get a reference to the "Checkboxes" collection for the current user:
+      const checkboxesRef = db.collection("users").doc(user.uid).collection("Checkboxes");
+
+      // Write the checkbox values to Firestore:
+      const promises = Object.keys(preferences).map((fieldName) => {
+        return checkboxesRef.doc(fieldName).set({ [fieldName]: preferences[fieldName] })
+          .then(() => {
+            console.log(`Checkbox ${fieldName} saved successfully!`);
+          })
+          .catch((error) => {
+            console.error(`Error saving checkbox ${fieldName}: `, error);
+          });
+      });
+
+      // Check if there are any items in the "Checkboxes" collection that aren't in the current preferences:
+      checkboxesRef.get().then((snapshot) => {
+        const docsToDelete = [];
+        snapshot.forEach((doc) => {
+          const fieldName = doc.id;
+          if (!preferences.hasOwnProperty(fieldName)) {
+            docsToDelete.push(doc.ref);
+          }
         });
+
+        // Delete any items in the "Checkboxes" collection that aren't in the current preferences:
+        const deletePromises = docsToDelete.map((ref) => {
+          return ref.delete()
+            .then(() => {
+              console.log(`Checkbox ${ref.id} deleted successfully!`);
+            })
+            .catch((error) => {
+              console.error(`Error deleting checkbox ${ref.id}: `, error);
+            });
+        });
+
+        // Wait for all writes and deletes to complete before logging success message:
+        Promise.all([...promises, ...deletePromises])
+          .then(() => {
+            console.log("Checkbox preferences saved successfully!");
+          })
+          .catch((error) => {
+            console.error("Error saving checkbox preferences: ", error);
+          });
+      });
     } else {
       // No user is signed in.
       console.log("No user is signed in");
     }
   });
 }
+
