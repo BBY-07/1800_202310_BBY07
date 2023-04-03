@@ -14,8 +14,6 @@ const handleClickTask = (square) => {
   }
 };
 
-// const correctAction = `<div class="task-correct">Correct!</div>`;
-
 function handleAction(e) {
   const correctAction = `<div class="task-correct">Correct!</div>`;
   e.preventDefault();
