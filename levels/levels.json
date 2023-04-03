@@ -2,7 +2,7 @@
   "levels": [
     {
       "name": "level1",
-      "tasks": ["Lawnmower", "uncutTree", "firewood"]
+      "tasks": ["lawnmower", "uncutTree", "firewood"]
     },
     {
       "name": "level2",
