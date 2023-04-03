@@ -1,12 +1,6 @@
 let zoomedSquareIndex = null;
 const defaultScaleFactor = 1;
 
-const squares = [
-  { x: 100, y: 100, width: 50, height: 50 },
-  { x: 1200, y: 500, width: 50, height: 50 },
-  { x: 1050, y: 1700, width: 50, height: 50, name: "Lawnmower" },
-];
-
 function drawSquare(square) {
   ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
   ctx.fillRect(
