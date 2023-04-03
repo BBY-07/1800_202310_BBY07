@@ -80,6 +80,15 @@ function zoomOnSquareClick(e) {
   });
 }
 
+function zoomOut() {
+  if (isZoomed) {
+    const square = squares[zoomedSquareIndex];
+    isZoomed = false;
+    zoomedSquareIndex = null;
+    zoomTo(defaultScaleFactor, square);
+  }
+}
+
 canvas.addEventListener("mousedown", (e) => {
   zoomOnSquareClick(e);
   startPanning(e);
