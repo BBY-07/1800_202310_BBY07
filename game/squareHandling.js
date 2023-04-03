@@ -49,5 +49,13 @@ function zoomTo(targetScaleFactor, square) {
   if (offsetY < -(scaledHeight - canvas.height))
     offsetY = -(scaledHeight - canvas.height);
   redrawImage();
-  handleClickTask(square);
+}
+
+function zoomOut() {
+  if (isZoomed) {
+    const square = squares[zoomedSquareIndex];
+    isZoomed = false;
+    zoomedSquareIndex = null;
+    zoomTo(defaultScaleFactor, square);
+  }
 }
