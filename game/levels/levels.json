@@ -1,0 +1,12 @@
+{
+  "levels": [
+    {
+      "name": "level1",
+      "tasks": ["Lawnmower", "uncutTree", "firewood"]
+    },
+    {
+      "name": "level2",
+      "tasks": ["leaves", "propane", "sprinklers"]
+    }
+  ]
+}

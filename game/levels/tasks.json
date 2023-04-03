@@ -1,0 +1,39 @@
+{
+    "tasks": {
+        "lawnmower": {
+            "element": "lawnmower",
+            "name": "Mow Overgrown Grass",
+            "description": "Keep grass and weeds cut..."
+        },
+        "uncutTree": {
+            "element": "uncutTree",
+            "name": "Prune Tree",
+            "description": "Prune trees to create a two-meter clearance..."
+        },
+        "firewood": {
+            "element": "firewood",
+            "name": "Move Firewood",
+            "description": "Move firewood and lumber away from home..."
+        },
+        "leaves": {
+            "element": "leaves",
+            "name": "Rake fallen leaves",
+            "description": "Keep a combustible-free perimeter..."
+        },
+        "propane": {
+            "element": "propane",
+            "name": "Move propane tanks",
+            "description": "Move explosives away from home..."
+        },
+        "sprinklers": {
+            "element": "sprinklers",
+            "name": "mount sprinklers",
+            "description": "Mount automatic sprinklers on your home..."
+        },
+        "dirtyGutters": {
+            "element": "dirtyGutters",
+            "name": "Clear gutters",
+            "description": "Clean out your gutters..."
+        }
+    }
+}
