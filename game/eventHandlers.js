@@ -81,18 +81,47 @@ function zoomOnSquareClick(e) {
   });
 }
 
-canvas.addEventListener("mousedown", (e) => {
-  zoomOnSquareClick(e);
-  startPanning(e);
-});
 canvas.addEventListener("mousemove", panImage);
 canvas.addEventListener("mouseup", stopPanning);
 canvas.addEventListener("mouseleave", stopPanning);
 
+canvas.addEventListener("touchmove", panImage);
+canvas.addEventListener("touchcancel", stopPanning);
+
+const fastTapThreshold = 100; // In milliseconds
+let touchStartTime;
+let touchStartEvent;
+let clickStartTime;
+let clickStartEvent;
+
 canvas.addEventListener("touchstart", (e) => {
-  zoomOnSquareClick(e);
+  touchStartTime = new Date().getTime();
+  touchStartEvent = e;
   startPanning(e);
 });
-canvas.addEventListener("touchmove", panImage);
-canvas.addEventListener("touchend", stopPanning);
-canvas.addEventListener("touchcancel", stopPanning);
+
+canvas.addEventListener("touchend", (e) => {
+  stopPanning();
+  const touchEndTime = new Date().getTime();
+  const touchDuration = touchEndTime - touchStartTime;
+
+  if (touchDuration < fastTapThreshold) {
+    zoomOnSquareClick(touchStartEvent);
+  }
+});
+
+canvas.addEventListener("mousedown", (e) => {
+  clickStartTime = new Date().getTime();
+  clickStartEvent = e;
+  startPanning(e);
+});
+
+canvas.addEventListener("mouseup", (e) => {
+  stopPanning();
+  const clickEndTime = new Date().getTime();
+  const clickDuration = clickEndTime - clickStartTime;
+
+  if (clickDuration < fastTapThreshold) {
+    zoomOnSquareClick(clickStartEvent);
+  }
+});
