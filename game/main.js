@@ -13,6 +13,33 @@ function redrawImage() {
   });
 }
 
+//Get level data
+async function fetchLevelData() {
+  const levelData = await fetch("../levels/levels.json").then((response) =>
+    response.json()
+  );
+
+  const taskData = await fetch("../levels/tasks.json").then((response) =>
+    response.json()
+  );
+
+  const level = levelData.levels[0];
+  const name = level.name;
+
+  const tasks = level.tasks.map((task) => {
+    return taskData.tasks[task];
+  });
+
+  return { name, tasks };
+}
+
+async function init() {
+  const levelData = await fetchLevelData();
+  generateGameUI(levelData);
+}
+
+init();
+
 // Initial drawing of squares when the image has loaded
 image.onload = () => {
   canvas.height = window.innerHeight;
