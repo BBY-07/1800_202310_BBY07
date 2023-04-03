@@ -29,7 +29,7 @@ function zoomTo(targetScaleFactor, square) {
   const newScaleFactor = targetScaleFactor * (canvas.height / image.height);
 
   const centerX = canvas.width / 2;
-  const centerY = canvas.height / 2;
+  const centerY = canvas.height * 0.25;
   const squareCenterX = square.x + square.width / 2;
 
   const squareCenterY = square.y + square.height / 2;
