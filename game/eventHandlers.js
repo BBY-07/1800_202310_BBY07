@@ -75,18 +75,10 @@ function zoomOnSquareClick(e) {
         zoomedSquareIndex = index;
         const zoomLevel = 3;
         zoomTo(zoomLevel, square);
+        handleClickTask(square);
       }
     }
   });
-}
-
-function zoomOut() {
-  if (isZoomed) {
-    const square = squares[zoomedSquareIndex];
-    isZoomed = false;
-    zoomedSquareIndex = null;
-    zoomTo(defaultScaleFactor, square);
-  }
 }
 
 canvas.addEventListener("mousedown", (e) => {
