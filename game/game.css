@@ -5,3 +5,25 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow: hidden;
 }
+
+#container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.task {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  right: 0;
+  height: 50%;
+  width: 95%; 
+  margin: 0 auto; 
+  z-index: 999; 
+  background-color: aliceblue;
+  box-sizing: border-box;
+  padding: 1em; 
+  border-radius: 1em;
+}
+
