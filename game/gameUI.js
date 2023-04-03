@@ -16,8 +16,16 @@ function generateGameUI (level) {
 
 updateUI = () => {
   currentTask++;
+  if (currentTask >= levelTasks.length) {
+    gameComplete();
+    return;
+  }
   const taskCounter = document.getElementsByClassName("task-counter")[0];
   const taskTracker = document.getElementsByClassName("task-tracker")[0];
   taskCounter.innerHTML = `${currentTask}/${levelTasks.length}`;
   taskTracker.innerHTML = levelTasks[currentTask].name;
+}
+
+function gameComplete() {
+  //implement game complete
 }
