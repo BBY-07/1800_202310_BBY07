@@ -45,7 +45,36 @@ const handleClickTask = (square) => {
   }
 };
 
-const handleAction = (e) => {
+const correctAction = `<div class="task-correct">Correct!</div>`;
+
+function handleAction(e) {
   e.preventDefault();
+  removeAllChildNodes(taskElement.firstChild);
+  taskElement.firstChild.innerHTML += correctAction;
+
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  async function clearTaskExplanation() {
+    await wait(1000);
+    removeAllChildNodes(taskElement.firstChild);
+  }
+
+  clearTaskExplanation().then(() => {
+    taskElement.innerHTML = generateTaskCompleteUI(currentTask);
+  });
+}
+
+function handleContinue(e) {
+  e.preventDefault();
+  taskElement.remove();
+  currentTask = null;
+  taskElement = null;
+  inTask = false;
   zoomOut();
-};
+}
+
+function removeAllChildNodes(parentElement) {
+  while (parentElement.firstChild) {
+    parentElement.removeChild(parentElement.firstChild);
+  }
+}
