@@ -73,4 +73,12 @@ function handleContinue(e) {
   taskElement = null;
   inTask = false;
   zoomOut();
+  if (currentTask >= levelTasks.length) {
+    gameComplete();
+  }
+}
+
+function handleRedirect(e) {
+  e.preventDefault();
+  window.location.href = "../../dashboard.html";
 }
