@@ -61,7 +61,7 @@
     height: auto;
   }
 
-  .course-card-footer {
+  #course-card-footer {
     padding: 20px;
     padding-top: 0px;
     text-align: right;
