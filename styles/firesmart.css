@@ -18,9 +18,7 @@ footer {
 
 /* Main app sections */
 .app-info,
-.app-screenshots,
-.app-description,
-.app-reviews {
+.app-description {
   padding: 20px;
 }
 
@@ -57,29 +55,7 @@ footer {
   cursor: pointer;
 }
 
-/* App Screenshots */
-.app-screenshots {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.app-screenshots img {
-  width: 100%;
-  max-width: 150px;
-  border-radius: 8px;
-}
-
-/* App Description */
 .app-description h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* App Reviews */
-.app-reviews h3 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -92,4 +68,8 @@ footer {
 .course-card-image img {
   width: 100%;
   height: auto;
+}
+
+form {
+  max-width: 70px;
 }
