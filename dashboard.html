@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firewall</title>
+  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="stylesheet" href="./styles/dashboard.css" />
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">firewall</div>
+      <button class="hamburger-menu" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Achievements</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="dashboard-container">
+    <div id="profile">
+      Hey, <span id="name"></span>!
+    </div>
+    <div id="content-container">
+      <div id="search-courses">
+        <input type="text" id="search-input" placeholder="Search for courses" />
+      </div>
+      <div>
+        <h2>Courses</h2>
+        <div id="courses">
+          <div class="course-card">
+            <div class="course-card-content">
+              <div class="course-card-image">
+                <img src="./images/background.jpg" alt="Course 1" />
+              </div>
+              <h3>FireSmart Your Home</h3>
+              <p>Taking action to FireSmart your property will dramatically decrease the risk of wildfire damaging your home.</p>
+            </div>
+            <div class="course-card-footer">
+              <form action="./game/game.html">
+                <input type="submit" class="course-card-button" value="Start" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+  <script src="./scripts/firebaseAPI.js"></script>
+  <script src="./scripts/dashboard.js"></script>
+</body>
+
+</html>
