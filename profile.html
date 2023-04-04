@@ -2,20 +2,28 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" type="text/css" href="/styles/profile.css">
-    <title>User Profile</title>
-    <meta name="userProfile" content="Profile information" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles/index.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firewall</title>
   </head>
 
   <body>
-    <header>
-      <nav>
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">firewall</div>
+        <button class="hamburger-menu" onclick="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+      <nav id="main-nav">
         <ul>
           <li><a href="dashboard.html">Home</a></li>
-          <li><a href="info.html">About</a></li>
-          <li><a href="#">Services</a></li>
           <li><a href="profile.html">Profile</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="checklist.html">Checklist</a></li>
         </ul>
       </nav>
     </header>
@@ -44,5 +52,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/Profile.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

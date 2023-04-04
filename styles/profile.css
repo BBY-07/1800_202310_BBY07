@@ -5,7 +5,7 @@ body {
     padding: 0;
   }
   
-  /* Header */
+  /* Header
   nav {
     background-color: #ff0000;
     display: flex;
@@ -38,7 +38,7 @@ body {
   nav a:hover {
     background-color: #ffffff;
     color: #ff0000;
-  }
+  } */
   
   
   /* Container */
@@ -79,7 +79,7 @@ body {
   
   /* Buttons */
   button {
-    background-color: #cc0000;
+    background-color: #3b3b3b;
     border: none;
     border-radius: 0.25rem;
     color: #fff;
@@ -88,7 +88,7 @@ body {
     padding: 0.5rem 1rem;
     transition: background-color 0.3s ease;
   }
-  
+/*   
   button:hover {
     background-color: #b30000;
   }
@@ -97,5 +97,5 @@ body {
     background-color: #f2f2f2;
     color: #ccc;
     cursor: default;
-  }
+  } */
   
