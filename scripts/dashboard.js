@@ -78,4 +78,10 @@ function saveUserInfo() {
     // Toggle "x" class on the hamburger menu
     hamburgerMenu.classList.toggle('x');
   }
+
+
+  let firesmart = document.getElementById("firesmart");
+  firesmart.addEventListener("click", function() {
+    window.location.href = "firesmart.html";
+  });
   
