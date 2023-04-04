@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Firewall</title>
-    <link rel="stylesheet" href="./styles/index.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="header-content">
-        <div class="logo">firewall</div>
-        <button class="hamburger-menu" onclick="toggleMenu()">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-      </div>
-      <nav id="main-nav">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="hero-container">
-      <div id="hero-media">
-        <video autoplay muted loop playsinline>
-          <source src="./images/herovideo.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div id="hero-text">
-        <h1>Learn wildfire safety skills with engaging lessons</h1>
-        <p>
-          Explore Firewall, the trusted online platform where students like you
-          gain valuable knowledge and skills in wildfire prevention and
-          preparedness using engaging, interactive methods.
-        </p>
-        <button class="start-button">Start Learning Today</button>
-      </div>
-    </div>
-    <div id="content">
-      <div>
-        <h2>Learn</h2>
-        <p>
-          Learn about wildfire safety and how to protect your home and loved
-          ones.
-        </p>
-      </div>
-    </div>
 
-    <script src="./scripts/index.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firewall</title>
+  <link rel="stylesheet" href="./styles/index.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">firewall</div>
+      <button class="hamburger-menu" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="hero-container">
+    <div id="hero-media">
+      <video autoplay muted loop playsinline>
+        <source src="./images/herovideo.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div id="hero-text">
+      <h1>Learn wildfire safety skills with engaging lessons</h1>
+      <p>
+        Explore Firewall, the trusted online platform where students like you
+        gain valuable knowledge and skills in wildfire prevention and
+        preparedness using engaging, interactive methods.
+      </p>
+      <form action="login.html">
+        <input type="submit" class="start-button" value="Start Learning Today" />
+      </form>
+    </div>
+  </div>
+  <div id="content">
+    <div class="learn-content">
+      <h2>Learn</h2>
+      <p>
+        Learn about wildfire safety and how to protect your home and loved
+        ones.
+      </p>
+    </div>
+  </div>
+
+  <script src="./scripts/index.js"></script>
+</body>
+
 </html>
