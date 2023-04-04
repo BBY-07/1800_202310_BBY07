@@ -1,0 +1,95 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+header,
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+/* Main app sections */
+.app-info,
+.app-screenshots,
+.app-description,
+.app-reviews {
+  padding: 20px;
+}
+
+/* App Info */
+.app-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-info img {
+  width: 100%;
+  max-width: 150px;
+  margin-right: 20px;
+}
+
+.app-info .app-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.app-info .app-developer {
+  color: #777;
+}
+
+.app-info .start-btn {
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* App Screenshots */
+.app-screenshots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.app-screenshots img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 8px;
+}
+
+/* App Description */
+.app-description h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* App Reviews */
+.app-reviews h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-card-image {
+  margin-bottom: 20px;
+}
+
+.course-card-image img {
+  width: 100%;
+  height: auto;
+}
