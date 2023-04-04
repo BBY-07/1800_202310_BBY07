@@ -13,7 +13,7 @@ function redrawImage() {
   });
 }
 
-let squares = []
+let squares = [];
 
 //Get level data
 async function fetchLevelData() {
@@ -34,12 +34,15 @@ async function fetchLevelData() {
 
   squares = tasks.map((task) => {
     const { x, y, width, height } = task.position;
-    const name = task.element;
-    return { x, y, width, height, name };
+    let name = task.element;
+    name = name.charAt(0).toUpperCase() + name.slice(1);
+    const description = task.description;
+    const action = task.action;
+    const explanation = task.explanation;
+    const gif = task.gif;
+    const title = task.title;
+    return { x, y, width, height, name, description, action, explanation, gif, title };
   });
-
-  console.log(squares);
-
   return { name, tasks };
 }
 
