@@ -117,7 +117,7 @@ body {
   border-radius: 20px;
   min-width: 100%;
   min-height: 100%;
-  font-weight: bold;
+  font-weight: 500;
   flex: 1;
 }
 
@@ -155,6 +155,10 @@ body {
   margin-top: 20px;
   flex-grow: 1;
   margin-right: 10px;
+}
+
+.task-continue {
+  margin-top: auto;
 }
 
 .task-continue button {
@@ -247,7 +251,11 @@ body {
   }
 }
 
-
-
-
-
+.current-task {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 400;
+}
