@@ -3,20 +3,33 @@
     "lawnmower": {
       "element": "lawnmower",
       "name": "Mow Overgrown Grass",
-      "description": "Keep grass and weeds cut...",
-      "position": { "x": 1000, "y": 1600, "width": 130, "height": 200 }
+      "description": "A red lawnmower sits on a green overgrown lawn, ready to mow.",
+      "action": "Mow the lawn!",
+      "position": { "x": 1000, "y": 1600, "width": 130, "height": 200 },
+      "explanation": "A mowed lawn is a fire-resistant lawn. Grass shorter than 10 centimetres is less likely to burn intensely. If possible, ensure your lawn is well hydrated, as dry grass has a higher flammability potential. Lastly, consider a xeriscape yard to reduce or eliminate the need for irrigation.",
+      "gif": "lawnmower.gif",
+      "title": "Grass"
     },
     "uncutTree": {
       "element": "uncutTree",
       "name": "Prune Tree",
-      "description": "Prune trees to create a two-meter clearance...",
-      "position": { "x": 2170, "y": 1000, "width": 250, "height": 450 }
+      "description": "An overgrown tree needs pruning to restore its shape and beauty.",
+      "action": "Prune the tree!",
+      "position": { "x": 2170, "y": 1000, "width": 250, "height": 450 },
+      "gif": "prune.webp",
+      "title": "Tree pruning",
+      "explanation": "A surface fire can climb up into trees quickly. Removing branches within two metres of the ground will help stop surface fires from moving into treetops. Pruning trees also helps reduce the risk of falling branches during a wildfire."
     },
     "firewood": {
       "element": "firewood",
       "name": "Move Firewood",
-      "description": "Move firewood and lumber away from home...",
-      "position": { "x": 2750, "y": 1100, "width": 200, "height": 125 }
+      "description": "Firewood neatly stacked on the lawn adds a touch of rustic charm to the outdoor space.",
+      "action": "Store firewood away from the house!",
+      "position": { "x": 2750, "y": 1100, "width": 200, "height": 125 },
+      "gif": "firewood.gif",
+      "explanation": "Wood piled against a house is a major fire hazard. Moving your firewood pile may be a key factor that allows your home to survive a wildfire. Clean up any such areas regularly, since easily ignitable debris often collects here.",
+      "title": "Firewood piles"
+
     },
     "leaves": {
       "element": "leaves",
