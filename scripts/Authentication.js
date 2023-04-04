@@ -18,7 +18,7 @@ var uiConfig = {
           })
           .then(function () {
             console.log("New user added to firestore");
-            window.location.assign("profile.html"); //re-direct to profile.html after signup
+            window.location.assign("dashboard.html"); //re-direct to profile.html after signup
           })
           .catch(function (error) {
             console.log("Error adding new user: " + error);
@@ -36,7 +36,7 @@ var uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: "popup",
-  signInSuccessUrl: "index.html",
+  signInSuccessUrl: "dashboard.html",
   signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
   // Terms of service url.
   tosUrl: "<your-tos-url>",
