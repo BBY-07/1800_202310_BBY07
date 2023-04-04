@@ -37,6 +37,7 @@ function gameComplete() {
   <div class="task-body">
     <div class="task-description">
       <div class="description">You have completed the first level of FireSmart BC Homeowner's Prep!</div>
+      <img src="../images/success.gif"/>
       <div class="link">Click <a href="https://firesmartbc.ca/">here</a> to learn more about the potential impacts of wildfire on your home.</div>
     </div>
     <div class="task-continue">
