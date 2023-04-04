@@ -147,3 +147,35 @@ function saveChecklist() {
   });
 }
 
+function addChecklistItem() {
+  // Get the input field and value
+  var checkboxesDiv = document.getElementById("Checkboxes");
+  let childCount = checkboxesDiv.childElementCount;
+  var newItemInput = document.getElementById("newChecklistItem");
+  var newItemValue = childCount + 1 + ": " + newItemInput.value;
+
+  // Create a new checkbox element
+  var newCheckbox = document.createElement("input");
+  newCheckbox.type = "checkbox";
+  newCheckbox.name = "checklistItem";
+  newCheckbox.value = newItemValue;
+
+  // Create a new label element for the checkbox
+  var newLabel = document.createElement("label");
+  newLabel.htmlFor = newItemValue;
+  newLabel.appendChild(document.createTextNode(newItemValue));
+
+  // Create a new div to contain the checkbox and label
+  var newDiv = document.createElement("div");
+  newDiv.appendChild(newCheckbox);
+  newDiv.appendChild(newLabel);
+
+  // Add the new div to the "Checkboxes" div
+  
+  checkboxesDiv.appendChild(newDiv);
+
+  // Reset the input field
+  newItemInput.value = "";
+}
+
+
