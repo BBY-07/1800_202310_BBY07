@@ -4,17 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Canvas</title>
-  <link rel="stylesheet" href="./game.css">
+  <link rel="stylesheet" href="./styles/tutorial.css">
+  <link rel="stylesheet" href="./styles/index.css">
+
+  <title>Tutorial</title>
 </head>
 
 <body>
-  <div id="images" class="screenshots">
-    <img src="https://dummyimage.com/200x200/000/fff">
-    <img src="https://dummyimage.com/200x200/008888/fff">
-    <img src="https://dummyimage.com/200x200/5b5c31/fff">
-  </div>
-  <script src="./tutorial.js"></script>
-</body>
+  <div id="content-container">
+    <div id="header">
+      <h1></h1>
+    </div>
+    <div id="content-body">
+      <div id="sub-header">
+        <h2></h2>
+      </div>
+      <div id="secondary-sub-header">
+        <h2></h2>
+      </div>
+      <div id="images" class="screenshots">
+        <img id="image">
+      </div>
+      <div id="explanation">
+      </div>
 
+    </div>
+    <div id="button-container"> 
+
+      <button id="tutorial-button" onclick="handleTutorialButton()">Next</button>
+    </div>
+  </div>
+  <script src="./game/tutorial.js"></script>
+</body>
 </html>
