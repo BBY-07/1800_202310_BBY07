@@ -7,7 +7,7 @@ const generateTaskUI = ({
     <div class="task-header">${name}</div>
     <div class="task-body">
       <div class="task-description">
-        ${description}
+        <div class="description">${description}</div>
         <div class="what-to-do">What do you want to do?</div>
       </div>
       <div class="task-action">
@@ -17,9 +17,10 @@ const generateTaskUI = ({
   </div>
 `;
 
-const generateTaskCompleteUI = ({ explanation = "explanation" }) => `
+const generateTaskCompleteUI = ({ explanation = "explanation", gif, title }) => `
   <div class="task">
-    <div class="task-header">Task Complete</div>
+  <div class="task-header">${title}</div>
+    <img src="../images/${gif}"/>
     <div class="task-body">
       <div class="task-explanation">${explanation}</div>
       <div class="task-continue">
