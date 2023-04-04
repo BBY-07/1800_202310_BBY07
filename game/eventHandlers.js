@@ -44,12 +44,7 @@ function panImage(e) {
   offsetX = newOffsetX;
   offsetY = newOffsetY;
 
-  console.log("offsetX:", offsetX, "offsetY:", offsetY);
-  //draw a square on the center of the canvas
-
-  redrawImage(); // Redraw the image with the updated offsets
-  ctx.fillStyle = "rgba(255, 255, 0, 0.5)";
-  console.log(offsetX + canvas.width / 2);
+  redrawImage();
 }
 
 function stopPanning() {
