@@ -1,23 +1,17 @@
-/* CSS for mobile screens */
 @media only screen and (max-width: 767px) {
-
-  /* Dashboard container styles */
   #dashboard-container {
     padding: 10px;
   }
 
-  /* Profile section styles */
   #profile {
     font-size: 18px;
     margin-bottom: 20px;
   }
 
-  /* Content container styles */
   #content-container {
     padding: 20px;
   }
 
-  /* Search courses section styles */
   #search-courses {
     margin-bottom: 20px;
   }
@@ -32,14 +26,12 @@
     font-size: 16px;
   }
 
-  /* Courses section styles */
   #courses {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  /* Course card styles */
   .course-card {
     width: 100%;
     margin-bottom: 20px;
@@ -76,5 +68,4 @@
     font-size: 16px;
     cursor: pointer;
   }
-
 }

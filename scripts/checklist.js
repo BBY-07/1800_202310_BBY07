@@ -36,11 +36,14 @@ function generateCheckboxes() {
                 }
 
                 // Check the checkbox if the value is in the Checkboxes collection
-                checkboxesRef.doc(key).get().then((doc) => {
-                  if (doc.exists) {
-                    checkbox.checked = doc.data()[key];
-                  }
-                });
+                checkboxesRef
+                  .doc(key)
+                  .get()
+                  .then((doc) => {
+                    if (doc.exists) {
+                      checkbox.checked = doc.data()[key];
+                    }
+                  });
 
                 // Create a label element
                 const label = document.createElement("label");
@@ -79,8 +82,6 @@ function generateCheckboxes() {
 
 generateCheckboxes();
 
-
-
 function saveChecklist() {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   const preferences = {};
@@ -97,11 +98,16 @@ function saveChecklist() {
     // Check if user is signed in:
     if (user) {
       // Get a reference to the "Checkboxes" collection for the current user:
-      const checkboxesRef = db.collection("users").doc(user.uid).collection("Checkboxes");
+      const checkboxesRef = db
+        .collection("users")
+        .doc(user.uid)
+        .collection("Checkboxes");
 
       // Write the checkbox values to Firestore:
       const promises = Object.keys(preferences).map((fieldName) => {
-        return checkboxesRef.doc(fieldName).set({ [fieldName]: preferences[fieldName] })
+        return checkboxesRef
+          .doc(fieldName)
+          .set({ [fieldName]: preferences[fieldName] })
           .then(() => {
             console.log(`Checkbox ${fieldName} saved successfully!`);
           })
@@ -122,7 +128,8 @@ function saveChecklist() {
 
         // Delete any items in the "Checkboxes" collection that aren't in the current preferences:
         const deletePromises = docsToDelete.map((ref) => {
-          return ref.delete()
+          return ref
+            .delete()
             .then(() => {
               console.log(`Checkbox ${ref.id} deleted successfully!`);
             })
@@ -171,11 +178,9 @@ function addChecklistItem() {
   newDiv.appendChild(newLabel);
 
   // Add the new div to the "Checkboxes" div
-  
+
   checkboxesDiv.appendChild(newDiv);
 
   // Reset the input field
   newItemInput.value = "";
 }
-
-

@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" type="text/css" href="/styles/profile.css">
-    <link rel="stylesheet" href="./styles/index.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Firewall</title>
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="header-content">
-        <div class="logo">firewall</div>
-        <button class="hamburger-menu" onclick="toggleMenu()">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-      </div>
-      <nav id="main-nav">
-        <ul>
-          <li><a href="dashboard.html">Home</a></li>
-          <li><a href="profile.html">Profile</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="checklist.html">Checklist</a></li>
-        </ul>
-      </nav>
-    </header>
-    <!-- the body of your page goes here -->
-    <div class="container">
-      <h1>User Profile</h1>
-      <form id="personalInfoFields">
-        <label for="nameInput">Name:</label>
-        <input type="text" id="nameInput" disabled /><br /><br />
-        <label for="countryInput">Country:</label>
-        <input type="text" id="countryInput" disabled /><br /><br />
-        <label for="provinceInput">Province:</label>
-        <input type="text" id="provinceInput" disabled /><br /><br />
-        <label for="cityInput">City:</label>
-        <input type="text" id="cityInput" disabled /><br /><br />
-      </form>
-      <button type="button" onclick="editUserInfo()">Edit</button>
-      <button type="button" onclick="saveUserInfo()">Save</button>
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles/profile.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firewall</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">firewall</div>
+      <button class="hamburger-menu" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="checklist.html">Checklist</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- the body of your page goes here -->
+  <div class="container">
+    <h1>User Profile</h1>
+    <form id="personalInfoFields">
+      <label for="nameInput">Name:</label>
+      <input type="text" id="nameInput" disabled /><br /><br />
+      <label for="countryInput">Country:</label>
+      <input type="text" id="countryInput" disabled /><br /><br />
+      <label for="provinceInput">Province:</label>
+      <input type="text" id="provinceInput" disabled /><br /><br />
+      <label for="cityInput">City:</label>
+      <input type="text" id="cityInput" disabled /><br /><br />
+    </form>
+    <button type="button" onclick="editUserInfo()">Edit</button>
+    <button type="button" onclick="saveUserInfo()">Save</button>
+  </div>
 
-    <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
+  <!-- our own footer goes here-->
+  <nav id="footerPlaceholder"></nav>
 
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
-    <script src="./scripts/firebaseAPI.js"></script>
-    <script src="./scripts/Profile.js"></script>
-    <script src="./scripts/index.js"></script>
-  </body>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+  <script src="./scripts/firebaseAPI.js"></script>
+  <script src="./scripts/Profile.js"></script>
+  <script src="./scripts/index.js"></script>
+</body>
+
 </html>

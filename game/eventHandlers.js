@@ -84,7 +84,7 @@ canvas.addEventListener("mouseleave", stopPanning);
 canvas.addEventListener("touchmove", panImage);
 canvas.addEventListener("touchcancel", stopPanning);
 
-const fastTapThreshold = 100; // In milliseconds
+const fastTapThreshold = 150; // In milliseconds
 let touchStartTime;
 let touchStartEvent;
 let clickStartTime;

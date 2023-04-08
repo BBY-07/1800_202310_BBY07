@@ -37,33 +37,31 @@ function populateUserInfo() {
 populateUserInfo();
 
 function editUserInfo() {
-    document.getElementById("nameInput").disabled = false;
-    document.getElementById("countryInput").disabled = false;
-    document.getElementById("provinceInput").disabled = false;
-    document.getElementById("cityInput").disabled = false;
-  }
-  
+  document.getElementById("nameInput").disabled = false;
+  document.getElementById("countryInput").disabled = false;
+  document.getElementById("provinceInput").disabled = false;
+  document.getElementById("cityInput").disabled = false;
+}
 
 function saveUserInfo() {
-    userName = document.getElementById("nameInput").value;
-    userCountry = document.getElementById("countryInput").value;
-    userProvince = document.getElementById("provinceInput").value;
-    userCity = document.getElementById("cityInput").value;
-  
-    currentUser
-      .update({
-        name: userName,
-        country: userCountry,
-        province: userProvince,
-        city: userCity,
-      })
-      .then(() => {
-        console.log("Document successfully updated!");
-      });
-  
-    document.getElementById("nameInput").disabled = true;
-    document.getElementById("countryInput").disabled = true;
-    document.getElementById("provinceInput").disabled = true;
-    document.getElementById("cityInput").disabled = true;
-  }
-  
+  userName = document.getElementById("nameInput").value;
+  userCountry = document.getElementById("countryInput").value;
+  userProvince = document.getElementById("provinceInput").value;
+  userCity = document.getElementById("cityInput").value;
+
+  currentUser
+    .update({
+      name: userName,
+      country: userCountry,
+      province: userProvince,
+      city: userCity,
+    })
+    .then(() => {
+      console.log("Document successfully updated!");
+    });
+
+  document.getElementById("nameInput").disabled = true;
+  document.getElementById("countryInput").disabled = true;
+  document.getElementById("provinceInput").disabled = true;
+  document.getElementById("cityInput").disabled = true;
+}
