@@ -14,6 +14,7 @@ const handleClickTask = (square) => {
   }
 };
 
+//Render Checkmark
 function handleAction(e) {
   e.preventDefault();
   const correctAction = `
@@ -50,10 +51,6 @@ function handleAction(e) {
     </div>
 
   `;
-
-  // <div class="task">
-  
-  // </div>;
 
   updateUI();
 

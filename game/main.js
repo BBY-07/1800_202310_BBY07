@@ -1,3 +1,4 @@
+// Function to redraw the image and squares on the canvas
 function redrawImage() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(
@@ -13,9 +14,10 @@ function redrawImage() {
   });
 }
 
+// Array to store the squares
 let squares = [];
 
-//Get level data
+// Function to fetch level data from JSON files
 async function fetchLevelData() {
   const levelData = await fetch("../levels/levels.json").then((response) =>
     response.json()
@@ -25,13 +27,14 @@ async function fetchLevelData() {
     response.json()
   );
 
+  // Extract the relevant data for the current level and its tasks
   const level = levelData.levels[0];
   const name = level.name;
-
   const tasks = level.tasks.map((task) => {
     return taskData.tasks[task];
   });
 
+  // Create an array of square objects for each task
   squares = tasks.map((task) => {
     const { x, y, width, height } = task.position;
     let name = task.element;
@@ -41,11 +44,23 @@ async function fetchLevelData() {
     const explanation = task.explanation;
     const gif = task.gif;
     const title = task.title;
-    return { x, y, width, height, name, description, action, explanation, gif, title };
+    return {
+      x,
+      y,
+      width,
+      height,
+      name,
+      description,
+      action,
+      explanation,
+      gif,
+      title,
+    };
   });
   return { name, tasks };
 }
 
+// Function to initialize the game
 async function init() {
   const levelData = await fetchLevelData();
   generateGameUI(levelData);

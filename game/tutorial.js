@@ -50,11 +50,11 @@ function handleTutorialButton() {
     currentDataIndex = 0;
   }
 
-  //if current index is last
+  //If current index is last
   if (currentDataIndex === tutorialData.length - 1) {
     const button = document.querySelector("#tutorial-button");
     button.textContent = "Start";
-    //redirect to game.html
+    //Redirect to game.html
     button.onclick = () => {
       window.location.href = "./game.html";
     };

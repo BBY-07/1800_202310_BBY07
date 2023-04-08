@@ -1,12 +1,14 @@
-let levelTasks = [];
-let levelName = null;
-let currentTask = 0;
+// Define some variables to keep track of the state of the game
+let levelTasks = []; // The tasks for the current level
+let levelName = null; // The name of the current level
+let currentTask = 0; // The index of the current task
 
+// Function to generate the game UI for a given level
 function generateGameUI(level) {
-  levelTasks = level.tasks;
-  levelName = level.name;
+  levelTasks = level.tasks; // Set the tasks for the current level
+  levelName = level.name; // Set the name of the current level
 
-  console.log(level);
+  // Create HTML elements for the game UI
   const taskCounter = `<div class="task-counter">${currentTask}/${levelTasks.length}</div>`;
   const taskTracker = `<div class="task-tracker">
   <div class="current-task">
@@ -18,6 +20,7 @@ function generateGameUI(level) {
   document.body.appendChild(gameUI);
 }
 
+// Function to update the game UI when a task is completed
 updateUI = () => {
   currentTask++;
   const taskCounter = document.getElementsByClassName("task-counter")[0];
